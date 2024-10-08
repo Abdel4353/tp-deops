@@ -2,7 +2,7 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Npm-Run-Build:
+  Npm-Run-Unit:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -12,7 +12,7 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Setup NodeJS
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with: 
           node-version: 22.9.0
       - run: npm install
